@@ -1,0 +1,24 @@
+*Willkommen beim CaseOh Bot*
+
+Dies ist eine frühe Alpha des CaseOh-Bots
+Ich kann Ihnen mit den folgenden Befehlen helfen:
+
+!help – Dieses Hilfemenü (en)
+!help de - Dieses Hilfemenü (de)
+!ping – Sendet Pong!
+
+    *-Zufälliges zeugs*
+
+!caseoh – Sendet zufälliges CaseOh-YouTube-Video
+!catstare – Sendet einen zufälligen catstare sticker
+!yellowmoji – Sendet einen zufälligen yellowmoji sticker
+!bluemoji – Sendet einen zufälligen bluemoji sticker
+!jaen – Sendet zufälliges Jæn_Gaming-Video
+    
+    *-Lustige Sachen*
+
+!ferriswheel – macht den Bot wütend
+!linus - Linus Sex-Tipps
+!squewe – Sendet ein zufälliges Squewe-Video
+
+    _CaseOh Bot Version 0.0.3_

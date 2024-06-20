@@ -1,0 +1,20 @@
+{
+  "name": "caseoh-bot",
+  "version": "0.0.1",
+  "description": "The *biggest* streamer",
+  "main": "bot.js",
+  "scripts": {
+    "test": "nodemon ."
+  },
+  "author": "Jaen",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "googleapis": "^137.1.0",
+    "nodemon": "^3.1.2",
+    "openai": "^4.48.2",
+    "qrcode-terminal": "^0.12.0",
+    "seedrandom": "^3.0.5",
+    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#webpack-exodus"
+  }
+}
