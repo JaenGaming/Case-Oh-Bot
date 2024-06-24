@@ -22,6 +22,11 @@ class Text {
     help_de(msg, client) {
         client.sendMessage(msg.from, fs.readFileSync(path.join(__dirname, "..", "assets", "help_de.txt")).toString());
     }
+    caseybasey(msg, client) {
+        const lines = fs.readFileSync(path.join(__dirname, "..", "assets", "caseybasey.txt")).toString().split("\n");
+        const randomLine = lines[Math.floor(Math.random() * lines.length)];
+        client.sendMessage(msg.from, randomLine);
+    }
 }
 
 module.exports = new Text();

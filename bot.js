@@ -85,7 +85,11 @@ client.on("message", async msg => {
         await client.sendMessage(msg.from, video.thumbnail, {caption: `*${video.title}*\n_${video.publishDate}_\n\n${video.videoUrl}`});
         console.log("!jaen")
     }
-
+    if (msg.body === "!caseybasey") {
+        text.caseybasey(msg, client);
+        console.log("!caseybasey")
+    }
+    //
 })
 
 client.initialize();

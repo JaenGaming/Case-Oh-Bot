@@ -14,3 +14,19 @@ CaseOh Whatsapp Bot
     <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
   </a>
 </div>
+
+## What is CaseOh--Bot?
+
+CaseOH is a WhatsApp bot that can help you with various things. He can send you random videos from CaseOH's YouTube channel, send you catstares, a random yellowmoji sticker, a random bluemoji sticker, and more. He can even help you with some funny things.
+
+## What can CaseOh-Bot do?
+
+- Send you random videos from CaseOn's YouTube channel
+- Send you catstare sticker
+- Send a random yellowmoji sticker
+- Send a random bluemoji sticker
+- Send a funny sticker or video
+- Send you Linus' sex tips sticker
+- Send you videos from Squewe
+
+You can interact with CaseOh-Bot by sending him messages. For example, you can send "!caseoh" to get a random video from CaseOh's YouTube channel.

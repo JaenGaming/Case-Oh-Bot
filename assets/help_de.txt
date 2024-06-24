@@ -14,6 +14,7 @@ Ich kann Ihnen mit den folgenden Befehlen helfen:
 !yellowmoji – Sendet einen zufälligen yellowmoji sticker
 !bluemoji – Sendet einen zufälligen bluemoji sticker
 !jaen – Sendet zufälliges Jæn_Gaming-Video
+!caseybasey - Sendet eine Zufälle CaseOh Line
     
     *-Lustige Sachen*
 
@@ -21,4 +22,4 @@ Ich kann Ihnen mit den folgenden Befehlen helfen:
 !linus - Linus Sex-Tipps
 !squewe – Sendet ein zufälliges Squewe-Video
 
-    _CaseOh Bot Version 0.0.3_
+    _CaseOh Bot Version 0.0.4_

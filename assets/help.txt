@@ -14,6 +14,7 @@ I can help you with the following commands:
 !yellowmoji – Sends a random yellowmoji sticker
 !bluemoji – Sends a random bluemoji sticker
 !jaen – Sends random Jæn_Gaming video
+!caseybasey - Sends a ranom CaseOh Line
     
     *-Funny things*
 
@@ -21,4 +22,4 @@ I can help you with the following commands:
 !linus - Linus sex tips
 !squewe – Sends a random Squewe video
 
-    _CaseOh Bot Version 0.0.3_
+    _CaseOh Bot Version 0.0.4_
