@@ -3,8 +3,6 @@
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const path = require('path');
-const fs = require("fs");
-const { Configuration, OpenAIApi } = require('openai');
 
 const client = new Client({
     authStrategy: new LocalAuth(),
@@ -17,10 +15,10 @@ const client = new Client({
 });
 
 // cmds
-const text = require("./src/text");
+const text = new (require("./src/text"))(client);
 const stickers = new (require("./src/sticker"))(client);
 const youtube = require("./src/youtube");
-const audio = require("./src/audio");
+const audio = new (require("./src/audio"))(client);
 
 client.on('ready', () => {
     console.log('Client is ready!');0
@@ -92,11 +90,11 @@ client.on("message", async msg => {
         console.log("!caseybasey")
     }
     if (msg.body === "!sticker") {
-        stickers.sticker(msg, client);
+        stickers.sticker(msg);
         console.log("!sticker")
     }
     if (msg.body === "!bk") {
-        audio.burgerking(msg, client);
+        audio.burgerking(msg);
         console.log("!bk")
     }
 })

@@ -2,31 +2,31 @@ const fs = require("fs");
 const path = require("path");
 
 class Text {
-    constructor() {
-
+    constructor(client) {
+        this.client = client; 
     }
 
-    ping(msg, client) {
-        client.sendMessage(msg.from, "Pong!");
+    ping(msg) {
+        this.client.sendMessage(msg.from, "Pong!");
     }    
 
-    ferrisWheel(msg, client) {
+    ferrisWheel(msg) {
         msg.react("🎡");
-        client.sendMessage(msg.from, "I am not shaped like a ferris wheel! 😡");
+        this.client.sendMessage(msg.from, "I am not shaped like a ferris wheel! 😡");
     }
 
-    help(msg, client) {
-        client.sendMessage(msg.from, fs.readFileSync(path.join(__dirname, "..", "assets", "help.txt")).toString());
+    help(msg) {
+        this.client.sendMessage(msg.from, fs.readFileSync(path.join(__dirname, "..", "assets", "help.txt")).toString());
     }
 
-    help_de(msg, client) {
-        client.sendMessage(msg.from, fs.readFileSync(path.join(__dirname, "..", "assets", "help_de.txt")).toString());
+    help_de(msg) {
+        this.client.sendMessage(msg.from, fs.readFileSync(path.join(__dirname, "..", "assets", "help_de.txt")).toString());
     }
     caseybasey(msg, client) {
         const lines = fs.readFileSync(path.join(__dirname, "..", "assets", "caseybasey.txt")).toString().split("\n");
         const randomLine = lines[Math.floor(Math.random() * lines.length)];
-        client.sendMessage(msg.from, randomLine);
+        this.client.sendMessage(msg.from, randomLine);
     }
 }
 
-module.exports = new Text();
+module.exports = Text;
