@@ -15,6 +15,7 @@ I can help you with the following commands:
 !bluemoji – Sends a random bluemoji sticker
 !jaen – Sends random Jæn_Gaming video
 !caseybasey - Sends a ranom CaseOh Line
+!sticker - Sends a random sticker of the CaseOh Bibliothek
     
     *-Funny things*
 

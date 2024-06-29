@@ -1,6 +1,4 @@
-const { MessageMedia } = require("whatsapp-web.js");
-const path = require('path');
-const fs = require("fs");
+
 
 class Stickers {
     constructor(client) {
@@ -29,12 +27,18 @@ class Stickers {
         const media = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", randomFile));
         this.client.sendMessage(msg.from, media, {sendMediaAsSticker: true});
         }
-        async catstare(msg, prefix="") {
-            const files = fs.readdirSync(path.join(__dirname, "..", "assets", "stickers")).filter(dir => dir.startsWith(prefix));
-            const randomFile = files[Math.floor(Math.random() * files.length)];
-            const media = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", randomFile));
-            this.client.sendMessage(msg.from, media, {sendMediaAsSticker: true});
-            }
+    async catstare(msg, prefix="") {
+        const files = fs.readdirSync(path.join(__dirname, "..", "assets", "stickers")).filter(dir => dir.startsWith(prefix));
+        const randomFile = files[Math.floor(Math.random() * files.length)];
+        const media = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", randomFile));
+        this.client.sendMessage(msg.from, media, {sendMediaAsSticker: true});
+        }
+    async  sticker(msg, prefix="") {
+        const files = fs.readdirSync(path.join(__dirname, "..", "assets", "stickers")).filter(file => file.endsWith(".webp"));
+        const randomFile = files[Math.floor(Math.random() * files.length)];
+        const media = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", randomFile));
+        this.client.sendMessage(msg.from, media, {sendMediaAsSticker: true});
+    }
 }
 
 module.exports = Stickers;

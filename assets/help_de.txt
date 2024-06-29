@@ -15,6 +15,7 @@ Ich kann Ihnen mit den folgenden Befehlen helfen:
 !bluemoji – Sendet einen zufälligen bluemoji sticker
 !jaen – Sendet zufälliges Jæn_Gaming-Video
 !caseybasey - Sendet eine Zufälle CaseOh Line
+!sticker - Sendet einen zufälligen Sticker aus der CaseOh Sticker Bibliothek
     
     *-Lustige Sachen*
 
