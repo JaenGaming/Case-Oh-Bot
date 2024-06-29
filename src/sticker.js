@@ -1,4 +1,6 @@
-
+const fs = require("fs");
+const { MessageMedia } = require("whatsapp-web.js");
+const path = require("path");
 
 class Stickers {
     constructor(client) {
@@ -26,14 +28,14 @@ class Stickers {
         const randomFile = files[Math.floor(Math.random() * files.length)];
         const media = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", randomFile));
         this.client.sendMessage(msg.from, media, {sendMediaAsSticker: true});
-        }
+    }
     async catstare(msg, prefix="") {
         const files = fs.readdirSync(path.join(__dirname, "..", "assets", "stickers")).filter(dir => dir.startsWith(prefix));
         const randomFile = files[Math.floor(Math.random() * files.length)];
         const media = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", randomFile));
         this.client.sendMessage(msg.from, media, {sendMediaAsSticker: true});
-        }
-    async  sticker(msg, prefix="") {
+    }
+    async sticker(msg) {
         const files = fs.readdirSync(path.join(__dirname, "..", "assets", "stickers")).filter(file => file.endsWith(".webp"));
         const randomFile = files[Math.floor(Math.random() * files.length)];
         const media = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", randomFile));
