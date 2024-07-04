@@ -14,13 +14,15 @@ Ich kann Ihnen mit den folgenden Befehlen helfen:
 !yellowmoji – Sendet einen zufälligen yellowmoji sticker
 !bluemoji – Sendet einen zufälligen bluemoji sticker
 !jaen – Sendet zufälliges Jæn_Gaming-Video
-!caseybasey - Sendet eine Zufälle CaseOh Line
+!caseybasey - Sendet eine Zufälle CaseOh PS5 Nachricht
 !sticker - Sendet einen zufälligen Sticker aus der CaseOh Sticker Bibliothek
+!squewe – Sendet ein zufälliges Squewe-Video
+!geoxor - Sendet einen zufälligen Geoxor-Song (YT)
+!voicereveal - CaseOh Voicereveal😱😱😱????
     
     *-Lustige Sachen*
 
 !ferriswheel – macht den Bot wütend
 !linus - Linus Sex-Tipps
-!squewe – Sendet ein zufälliges Squewe-Video
 
-    _CaseOh Bot Version 0.0.4_
+    _CaseOh Bot Version 0.0.5_

@@ -21,7 +21,7 @@ const youtube = require("./src/youtube");
 const audio = new (require("./src/audio"))(client);
 
 client.on('ready', () => {
-    console.log('Client is ready!');0
+    console.log('Client is ready!');
 });
 
 client.on('qr', qr => {
@@ -45,6 +45,7 @@ client.on("message", async msg => {
     }
     if (msg.body === "!linus") {
         stickers.sendSticker(msg, "linus");
+        client.sendMessage(msg.from, "Caught in 4K Lil bro");
         console.log("!linus")
     }
     if (msg.body === "!yellowmoji") {
@@ -96,6 +97,16 @@ client.on("message", async msg => {
     if (msg.body === "!bk") {
         audio.burgerking(msg);
         console.log("!bk")
+    }
+    if (msg.body === "!geoxor") {
+        const video = await youtube.getAnimeWaifuSongVideo();
+    
+        await client.sendMessage(msg.from, video.thumbnail, {caption: `*${video.title}*\n_${video.publishDate}_\n\n${video.videoUrl}`});
+        console.log("!geoxor")
+    }
+    if (msg.body === "!voicereveal") {
+        audio.voicereveal(msg);
+        console.log("!voicereveal")
     }
 })
 

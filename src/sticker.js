@@ -17,7 +17,6 @@ class Stickers {
         const randomFile = files[Math.floor(Math.random() * files.length)];
         const media = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", randomFile));
         this.client.sendMessage(msg.from, media, {sendMediaAsSticker: true});
-        //send skullemoji.webp with an 1% chance
         if(Math.random() < 0.01){
             const skullemoji = await MessageMedia.fromFilePath(path.join(__dirname, "..", "assets", "stickers", "yellowmoji_secret_skeletondie.webp"));
             this.client.sendMessage(msg.from, skullemoji, {sendMediaAsSticker: true});
