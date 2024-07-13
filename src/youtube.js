@@ -32,7 +32,7 @@ class YouTube {
         const videoDetails = {
             title: randomVideo.snippet.title,
             publishDate: new Date(randomVideo.snippet.publishedAt).toLocaleDateString("de-DE"),
-            thumbnail: await MessageMedia.fromUrl(randomVideo.snippet.thumbnails.default.url),
+            thumbnail: await MessageMedia.fromUrl(randomVideo.snippet.thumbnails.maxres.url),
             videoUrl: "https://www.youtube.com/watch?v=" + randomVideo.snippet.resourceId.videoId
         };
 
@@ -59,7 +59,7 @@ class YouTube {
         const videoDetails = {
             title: randomVideo.snippet.title,
             publishDate: new Date(randomVideo.snippet.publishedAt).toLocaleDateString("de-DE"),
-            thumbnail: await MessageMedia.fromUrl(randomVideo.snippet.thumbnails.default.url),
+            thumbnail: await MessageMedia.fromUrl(randomVideo.snippet.thumbnails.maxres.url),
             videoUrl: "https://www.youtube.com/watch?v=" + randomVideo.snippet.resourceId.videoId
         };
 
@@ -86,7 +86,7 @@ class YouTube {
         const videoDetails = {
             title: randomVideo.snippet.title,
             publishDate: new Date(randomVideo.snippet.publishedAt).toLocaleDateString("de-DE"),
-            thumbnail: await MessageMedia.fromUrl(randomVideo.snippet.thumbnails.default.url),
+            thumbnail: await MessageMedia.fromUrl(randomVideo.snippet.thumbnails.maxres.url),
             videoUrl: "https://www.youtube.com/watch?v=" + randomVideo.snippet.resourceId.videoId
         };
 
@@ -112,7 +112,7 @@ class YouTube {
         const videoDetails = {
             title: randomVideo.snippet.title,
             publishDate: new Date(randomVideo.snippet.publishedAt).toLocaleDateString("de-DE"),
-            thumbnail: await MessageMedia.fromUrl(randomVideo.snippet.thumbnails.default.url),
+            thumbnail: await MessageMedia.fromUrl(randomVideo.snippet.thumbnails.maxres.url),
             videoUrl: "https://www.youtube.com/watch?v=" + randomVideo.snippet.resourceId.videoId
         };
 
