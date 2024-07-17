@@ -5,13 +5,7 @@ const qrcode = require('qrcode-terminal');
 const path = require('path');
 
 const client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: {
-        headless: true,
-        executablePath: 
-            process.platform === 'win32' ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' 
-                                         : `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`,
-    }
+    executablePath: process.env.CHROME_PATH
 });
 
 // cmds
