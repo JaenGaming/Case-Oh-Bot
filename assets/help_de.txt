@@ -1,28 +1,29 @@
 *Willkommen beim CaseOh Bot*
 
 Dies ist eine frühe Alpha des CaseOh-Bots
+
 Ich kann Ihnen mit den folgenden Befehlen helfen:
 
-!help – Dieses Hilfemenü (en)
-!help de - Dieses Hilfemenü (de)
-!ping – Sendet Pong!
+- !help – Dieses Hilfemenü (en)
+- !help de - Dieses Hilfemenü (de)
+- !ping – Sendet Pong!
 
-    *-Zufälliges zeugs*
+    *- Zufälliges zeugs*
 
-!caseoh – Sendet zufälliges CaseOh-YouTube-Video
-!catstare – Sendet einen zufälligen catstare sticker
-!yellowmoji – Sendet einen zufälligen yellowmoji sticker
-!bluemoji – Sendet einen zufälligen bluemoji sticker
-!jaen – Sendet zufälliges Jæn_Gaming-Video
-!caseybasey - Sendet eine Zufälle CaseOh PS5 Nachricht
-!sticker - Sendet einen zufälligen Sticker aus der CaseOh Sticker Bibliothek
-!squewe – Sendet ein zufälliges Squewe-Video
-!geoxor - Sendet einen zufälligen Geoxor-Song (YT)
-!voicereveal - CaseOh Voicereveal😱😱😱????
+- !caseoh – Sendet zufälliges CaseOh-YouTube-Video
+- !catstare – Sendet einen zufälligen catstare sticker
+- !yellowmoji – Sendet einen zufälligen yellowmoji sticker
+- !bluemoji – Sendet einen zufälligen bluemoji sticker
+- !jaen – Sendet zufälliges Jæn_Gaming-Video
+- !caseybasey - Sendet eine Zufälle CaseOh PS5 Nachricht
+- !sticker - Sendet einen zufälligen Sticker aus der CaseOh Sticker Bibliothek
+- !squewe – Sendet ein zufälliges Squewe-Video
+- !geoxor - Sendet einen zufälligen Geoxor-Song (YT)
+- !voicereveal - CaseOh Voicereveal😱😱😱????
     
-    *-Lustige Sachen*
+    *- Lustige Sachen*
 
-!ferriswheel – macht den Bot wütend
-!linus - Linus Sex-Tipps
+- !ferriswheel – macht den Bot wütend
+- !linus - Linus Sex-Tipps
 
     _CaseOh Bot Version 0.0.5_

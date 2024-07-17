@@ -1,28 +1,29 @@
 *Welcome to CaseOh Bot*
 
 This is an early alpha of the CaseOh bot
+
 I can help you with the following commands:
 
-!help – This help menu(s)
-!help de - This help menu (de)
-!ping – Sends Pong!
+- !help – This help menu(en)
+- !help de - This help menu (de)
+- !ping – Sends Pong!
 
     *-Random stuff*
 
-!caseoh – Sends random CaseOh YouTube video
-!catstare – Sends a random catstare sticker
-!yellowmoji – Sends a random yellowmoji sticker
-!bluemoji – Sends a random bluemoji sticker
-!jaen – Sends random Jæn_Gaming video
-!caseybasey - Sends a random CaseOh PS5 message
-!sticker - Sends a random sticker from the CaseOh sticker library
-!squewe – Sends a random Squewe video
-!geoxor - Sends a random Geoxor song (YT)
-!voicereveal - CaseOh Voicereveal😱😱😱????
+- !caseoh – Sends random CaseOh YouTube video
+- !catstare – Sends a random catstare sticker
+- !yellowmoji – Sends a random yellowmoji sticker
+- !bluemoji – Sends a random bluemoji sticker
+- !jaen – Sends random Jæn_Gaming video
+- !caseybasey - Sends a random CaseOh PS5 message
+- !sticker - Sends a random sticker from the CaseOh sticker library
+- !squewe – Sends a random Squewe video
+- !geoxor - Sends a random Geoxor song (YT)
+- !voicereveal - CaseOh Voicereveal😱😱😱????
     
     *-Funny things*
 
-!ferriswheel – makes the bot angry
-!linus - Linus sex tips
+- !ferriswheel – makes the bot angry
+- !linus - Linus sex tips
 
     _CaseOh Bot Version 0.0.5_

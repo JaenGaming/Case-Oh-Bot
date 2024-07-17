@@ -27,6 +27,9 @@ class Text {
         const randomLine = lines[Math.floor(Math.random() * lines.length)];
         this.client.sendMessage(msg.from, randomLine);
     }
+    süß(msg) {
+        this.client.sendMessage(msg.from, fs.readFileSync(path.join(__dirname, "..", "assets", "süß.txt")).toString());
+    }
 }
 
 module.exports = Text;
