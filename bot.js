@@ -1,11 +1,18 @@
-//itsame Jaen
+// itsame Jaen
+
+require("dotenv").config();
 
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const path = require('path');
 
 const client = new Client({
-    executablePath: process.env.CHROME_PATH
+    authStrategy: new LocalAuth(),
+    puppeteer: {
+        executablePath: process.env.CHROME_PATH,
+        headless: true,
+        args: process.env.DISABLE_SANDBOX == "true" ? ["--no-sandbox"] : undefined
+    ]
 });
 
 // cmds
