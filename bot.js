@@ -102,6 +102,10 @@ client.on("message", async msg => {
         audio.voicereveal(msg);
         console.log("!voicereveal")
     }
+    if (msg.body === "!changelog") {
+        text.changelog(msg);
+        console.log("!changelog")
+    }
 })
 
 client.initialize();

@@ -30,6 +30,9 @@ class Text {
     süß(msg) {
         this.client.sendMessage(msg.from, fs.readFileSync(path.join(__dirname, "..", "assets", "süß.txt")).toString());
     }
+    changelog(msg) {
+        this.client.sendMessage(msg.from, fs.readFileSync(path.join(__dirname, "..", "assets", "changelog.txt")).toString());
+    }
 }
 
 module.exports = Text;

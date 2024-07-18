@@ -4,9 +4,11 @@ Dies ist eine frühe Alpha des CaseOh-Bots
 
 Ich kann Ihnen mit den folgenden Befehlen helfen:
 
+    *-Hilfreiche Sachen zum Bot*
+
 - !help – Dieses Hilfemenü (en)
 - !help de - Dieses Hilfemenü (de)
-- !ping – Sendet Pong!
+- !changleog - Verpasse keine Neuen Updates!
 
     *- Zufälliges zeugs*
 

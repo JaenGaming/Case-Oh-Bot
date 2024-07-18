@@ -4,9 +4,11 @@ This is an early alpha of the CaseOh bot
 
 I can help you with the following commands:
 
+    *-Helpful stuff*
+
 - !help – This help menu(en)
 - !help de - This help menu (de)
-- !ping – Sends Pong!
+- !changelog - Dont miss any new Updates!
 
     *-Random stuff*
 
