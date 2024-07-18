@@ -61,7 +61,8 @@ npm i
 ```
 ### 4. Preparing keys and environment settings
 Using Google Cloud Console, create a YouTube API key. How that works won't be mentioned here.
-> [!NOTE]
+> **NOTE**
+>
 > Because every distro and package manager is different, run `whereis google-chrome` to find your Chrome installation path. On Debian/Ubuntu it should be `/usr/bin/google-chrome-stable`
 Then create a `.env` file with following:
 ```
@@ -140,7 +141,8 @@ npm i
 ### 4. Preparing keys and environment settings
 Using Google Cloud Console, create a YouTube API key. How that works won't be mentioned here.
 
-> [!NOTE]
+> **NOTE**
+>
 > If you got rid of Microsoft Edge or it wasn't installed for you, you need to get a Chromium based browser (perferrably Google Chrome), and use it's path instead of the Microsoft Edge path in `.env`!
 Then create a `.env` file with following:
 ```
