@@ -17,9 +17,6 @@
   </a>
 </div>
 
-> [!NOTE]
-> Because every distro and package manager is different, run `whereis google-chrome` to find your Chrome installation path. On Debian/Ubuntu it should be `/usr/bin/google-chrome-stable`
-
 ## What is Case-Oh-Bot?
 
 CaseOh-Bot is a WhatsApp bot that can help you with various things. He can send you random videos from CaseOH's YouTube channel, send you catstares, a random yellowmoji sticker, a random bluemoji sticker, and more. He can even help you with some funny things.
