@@ -6,13 +6,16 @@ const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const path = require('path');
 
+if (!process.env.CHROME_PATH || !process.env.YOUTUBE_API_KEY) {
+    throw new Error("CaseOh Bot requires a valid .env file with atleast CHROME_PATH and YOUTUBE_API_KEY specified.\nCheck the README for more details.")
+
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
         executablePath: process.env.CHROME_PATH,
         headless: true,
         args: process.env.DISABLE_SANDBOX == "true" ? ["--no-sandbox"] : undefined
-    ]
+    }
 });
 
 // cmds
