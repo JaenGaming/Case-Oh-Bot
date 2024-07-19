@@ -8,6 +8,7 @@ const path = require('path');
 
 if (!process.env.CHROME_PATH || !process.env.YOUTUBE_API_KEY) {
     throw new Error("CaseOh Bot requires a valid .env file with atleast CHROME_PATH and YOUTUBE_API_KEY specified.\nCheck the README for more details.")
+    }
 
 const client = new Client({
     authStrategy: new LocalAuth(),
