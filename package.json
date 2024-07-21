@@ -2,7 +2,7 @@
   "name": "caseoh-bot",
   "version": "0.0.5",
   "description": "The *biggest* streamer",
-  "main": "bot.js",
+  "main": "monitor.js",
   "scripts": {
     "test": "nodemon ."
   },
