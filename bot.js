@@ -27,11 +27,14 @@ const audio = new (require("./src/audio"))(client);
 
 client.on('ready', () => {
     console.log('Client is ready!');
+    client.sendMessage("120363237311723757@g.us", "Me liv :)");
 });
 
 client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
 });
+
+let hasStickersEnabled = {}
 
 client.on("message", async msg => {
     console.log(msg.from, msg.type, "sent", msg.body)
@@ -116,6 +119,26 @@ client.on("message", async msg => {
     if (msg.body === "!changelog") {
         text.changelog(msg);
         console.log("!changelog")
+    }
+    if (msg.body === "!time") {
+        const time = new Date().toLocaleTimeString();
+        client.sendMessage(msg.from, time);
+        console.log("!time")
+    }
+    if (msg.type === "sticker" && hasStickersEnabled[msg.from]) {
+        stickers.sticker(msg);
+    }
+    if (msg.body === "!stickers") {
+        if (typeof hasStickersEnabled[msg.from] !== "boolean") {
+            hasStickersEnabled[msg.from] = false;
+        }
+        hasStickersEnabled[msg.from] = !hasStickersEnabled[msg.from];
+
+        if (hasStickersEnabled[msg.from]) {
+            client.sendMessage(msg.from, "Enabled stickers");
+        } else {
+            client.sendMessage(msg.from, "Disabled stickers");
+        }
     }
 })
 

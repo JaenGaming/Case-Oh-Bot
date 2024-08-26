@@ -22,10 +22,11 @@ Ich kann Ihnen mit den folgenden Befehlen helfen:
 - !squewe – Sendet ein zufälliges Squewe-Video
 - !geoxor - Sendet einen zufälligen Geoxor-Song (YT)
 - !voicereveal - CaseOh Voicereveal😱😱😱????
+- !stickers - Ein Modus der den Case-Oh-Bot auf jeden Sticker reagieren lässt
     
     *- Lustige Sachen*
 
 - !ferriswheel – macht den Bot wütend
 - !linus - Linus Sex-Tipps
 
-    _CaseOh Bot Version 0.0.5_
+    _CaseOh Bot Version 0.0.6_

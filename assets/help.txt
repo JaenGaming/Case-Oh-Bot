@@ -22,10 +22,11 @@ I can help you with the following commands:
 - !squewe – Sends a random Squewe video
 - !geoxor - Sends a random Geoxor song (YT)
 - !voicereveal - CaseOh Voicereveal😱😱😱????
+- !stickers - A mode that lets the Case-Oh-Bot react to every sticker
     
     *-Funny things*
 
 - !ferriswheel – makes the bot angry
 - !linus - Linus sex tips
 
-    _CaseOh Bot Version 0.0.5_
+    _CaseOh Bot Version 0.0.6_
