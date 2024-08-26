@@ -127,6 +127,7 @@ client.on("message", async msg => {
     }
     if (msg.type === "sticker" && hasStickersEnabled[msg.from]) {
         stickers.sticker(msg);
+        console.log("me react to sticker wudahel 💀")
     }
     if (msg.body === "!stickers") {
         if (typeof hasStickersEnabled[msg.from] !== "boolean") {
@@ -136,8 +137,10 @@ client.on("message", async msg => {
 
         if (hasStickersEnabled[msg.from]) {
             client.sendMessage(msg.from, "Enabled stickers");
+            console.log("Enabled stickers")
         } else {
             client.sendMessage(msg.from, "Disabled stickers");
+            console.log("Disabled stickers")
         }
     }
 })
