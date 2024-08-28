@@ -23,10 +23,12 @@ Ich kann Ihnen mit den folgenden Befehlen helfen:
 - !geoxor - Sendet einen zufälligen Geoxor-Song (YT)
 - !voicereveal - CaseOh Voicereveal😱😱😱????
 - !stickers - Ein Modus der den Case-Oh-Bot auf jeden Sticker reagieren lässt
+- !8ball... -  Frage den Magischen ️8ball eine Frage 🧙‍♂️
+- !coinflip... - Wirf eine Münze
     
     *- Lustige Sachen*
 
 - !ferriswheel – macht den Bot wütend
 - !linus - Linus Sex-Tipps
 
-    _CaseOh Bot Version 0.0.6_
+    _CaseOh Bot Version 0.0.7_

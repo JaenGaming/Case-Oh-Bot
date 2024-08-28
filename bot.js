@@ -5,6 +5,7 @@ require("dotenv").config();
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const path = require('path');
+const fs = require('fs');
 
 if (!process.env.CHROME_PATH || !process.env.YOUTUBE_API_KEY) {
     throw new Error("CaseOh Bot requires a valid .env file with atleast CHROME_PATH and YOUTUBE_API_KEY specified.\nCheck the README for more details.")
@@ -27,7 +28,7 @@ const audio = new (require("./src/audio"))(client);
 
 client.on('ready', () => {
     console.log('Client is ready!');
-    client.sendMessage("120363237311723757@g.us", "Me liv :)");
+    client.sendMessage("120363237311723757@g.us", "Me liv :) (TEST VERSION)");
 });
 
 client.on('qr', qr => {
@@ -116,10 +117,6 @@ client.on("message", async msg => {
         audio.voicereveal(msg);
         console.log("!voicereveal")
     }
-    if (msg.body === "!changelog") {
-        text.changelog(msg);
-        console.log("!changelog")
-    }
     if (msg.body === "!time") {
         const time = new Date().toLocaleTimeString();
         client.sendMessage(msg.from, time);
@@ -142,6 +139,26 @@ client.on("message", async msg => {
             client.sendMessage(msg.from, "Disabled stickers");
             console.log("Disabled stickers")
         }
+    }
+    if (msg.body.startsWith("!8ball")) {
+        const msgBody = msg.body.slice(7);
+        const replyText = `You asked: ${msgBody}\n`;
+        const achtball = fs.readFileSync(path.join(__dirname, "assets", "achtball.txt")).toString().split("\n");
+        const randomLine = achtball[Math.floor(Math.random() * achtball.length)];
+        const boobis = `My answer: `;
+        const göhö = replyText + boobis + randomLine;
+        msg.reply(göhö);
+        console.log("!8ball")
+    }
+    if (msg.body.startsWith("!coinflip")) {
+        const msgBody = msg.body.slice(9);
+        const replyText = `You asked: ${msgBody}\n`;
+        const coinflip = fs.readFileSync(path.join(__dirname, "assets", "coinflip.txt")).toString().split("\n");
+        const randomLine = coinflip[Math.floor(Math.random() * coinflip.length)];
+        const boobis = `My answer: `;
+        const göhö = replyText + boobis + randomLine;
+        msg.reply(göhö);
+        console.log("!coinflip")
     }
 })
 

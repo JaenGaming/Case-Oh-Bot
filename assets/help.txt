@@ -23,10 +23,12 @@ I can help you with the following commands:
 - !geoxor - Sends a random Geoxor song (YT)
 - !voicereveal - CaseOh Voicereveal😱😱😱????
 - !stickers - A mode that lets the Case-Oh-Bot react to every sticker
+- !8ball... - Ask the magik 8ball a question🧙‍♂️
+- !coinflip... - Flip a coin
     
     *-Funny things*
 
 - !ferriswheel – makes the bot angry
 - !linus - Linus sex tips
 
-    _CaseOh Bot Version 0.0.6_
+    _CaseOh Bot Version 0.0.7_
