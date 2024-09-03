@@ -6,17 +6,20 @@ const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const path = require('path');
 const fs = require('fs');
+const cron = require('node-cron');
+
+const RESTART_FILE_PATH = path.join(__dirname, 'restart.tmp'); // Pfad zur temporären Datei
 
 if (!process.env.CHROME_PATH || !process.env.YOUTUBE_API_KEY) {
-    throw new Error("CaseOh Bot requires a valid .env file with atleast CHROME_PATH and YOUTUBE_API_KEY specified.\nCheck the README for more details.")
-    }
+    throw new Error("CaseOh Bot requires a valid .env file with at least CHROME_PATH and YOUTUBE_API_KEY specified.\nCheck the README for more details.");
+}
 
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
         executablePath: process.env.CHROME_PATH,
         headless: true,
-        args: process.env.DISABLE_SANDBOX == "true" ? ["--no-sandbox"] : undefined
+        args: process.env.DISABLE_SANDBOX === "true" ? ["--no-sandbox"] : undefined
     }
 });
 
@@ -27,105 +30,157 @@ const youtube = require("./src/youtube");
 const audio = new (require("./src/audio"))(client);
 
 client.on('ready', () => {
-    console.log('Client is ready!');
-    client.sendMessage("120363237311723757@g.us", "Me liv :) (TEST VERSION)");
+    let wasRestarted = false;
+
+    if (fs.existsSync(RESTART_FILE_PATH)) {
+        wasRestarted = true;
+        fs.unlinkSync(RESTART_FILE_PATH);
+    }
+
+    if (process.env.IS_TEST === 'true') {
+        const message = wasRestarted ? 'Me liv :) (TEST VERSION) (Restarted)' : 'Me liv :) (TEST VERSION)';
+        console.log(message);
+        client.sendMessage("120363237311723757@g.us", message);
+    } else {
+        const message = wasRestarted ? 'Me liv :) (Restarted)' : 'Me liv :)';
+        console.log(message);
+        client.sendMessage("120363237311723757@g.us", message);
+    }
+
+    runAtMidnight(() => {
+        text.wordofdadae({from: "120363237311723757@g.us"}, client);
+        console.log("wordofdadae sent");
+    });
 });
 
 client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
 });
 
-let hasStickersEnabled = {}
+let hasStickersEnabled = {};
+
+function runAtMidnight(callback) {
+    const now = new Date();
+    const nextMidnight = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() + 1,
+        0, 0, 0, 0
+    );
+
+    const timeUntilMidnight = nextMidnight - now;
+
+    setTimeout(() => {
+        callback();
+        runAtMidnight(callback);
+    }, timeUntilMidnight);
+}
 
 client.on("message", async msg => {
-    console.log(msg.from, msg.type, "sent", msg.body)
+    console.log(msg.from, msg.type, "sent", msg.body);
+
     if (msg.body === "!ping") {
         text.ping(msg, client);
-        console.log("!ping")
+        console.log("!ping");
     }
+
     if (msg.body === "!ferriswheel") {
         text.ferrisWheel(msg, client);
-        console.log("!ferriswheel")
+        console.log("!ferriswheel");
     }
+
     if (msg.body === "!msgmediatest") {
         const media = await MessageMedia.fromFilePath(path.join(__dirname, "assets", "videos", "momus_lore.mp4"));
         client.sendMessage(msg.from, media, {caption: "momus lore"});
-        console.log("!msgmediatest")
+        console.log("!msgmediatest");
     }
+
     if (msg.body === "!linus") {
         stickers.sendSticker(msg, "linus");
         client.sendMessage(msg.from, "Caught in 4K Lil bro");
-        console.log("!linus")
+        console.log("!linus");
     }
+
     if (msg.body === "!yellowmoji") {
         stickers.yellowmoji(msg, "yellowmoji");
-        console.log("!yellowmoji")
+        console.log("!yellowmoji");
     }
+
     if (msg.body === "!bluemoji") {
         stickers.bluemoji(msg, "bluemoji");
-        console.log("!bluemoji")
+        console.log("!bluemoji");
     }
+
     if (msg.body === "!catstare") {
         stickers.catstare(msg, "catstare");
-        console.log("!catstare")
+        console.log("!catstare");
     }
+
     if (msg.body === "!squewe") {
         const video = await youtube.getSqueweVideo();
-    
         await client.sendMessage(msg.from, video.thumbnail, {caption: `*${video.title}*\n_${video.publishDate}_\n\n${video.videoUrl}`});
-        console.log("!squewe")
+        console.log("!squewe");
     }
+
     if (msg.body === "!caseoh") {
         const video = await youtube.getCaseohVideo();
-    
         await client.sendMessage(msg.from, video.thumbnail, {caption: `*${video.title}*\n_${video.publishDate}_\n\n${video.videoUrl}`});
-        console.log("!caseoh")
+        console.log("!caseoh");
     }
+
     if (msg.body === "!help") {
         text.help(msg, client);
-        console.log("!help")
+        console.log("!help");
     }
+
     if (msg.body === "!help de") {
         text.help_de(msg, client);
-        console.log("!help de")
+        console.log("!help de");
     }
+
     if (msg.body === "!jaen") {
         const video = await youtube.getJaenVideo();
-    
         await client.sendMessage(msg.from, video.thumbnail, {caption: `*${video.title}*\n_${video.publishDate}_\n\n${video.videoUrl}`});
-        console.log("!jaen")
+        console.log("!jaen");
     }
+
     if (msg.body === "!caseybasey") {
         text.caseybasey(msg, client);
-        console.log("!caseybasey")
+        console.log("!caseybasey");
     }
+
     if (msg.body === "!sticker") {
         stickers.sticker(msg);
-        console.log("!sticker")
+        console.log("!sticker");
     }
+
     if (msg.body === "!bk") {
         audio.burgerking(msg);
-        console.log("!bk")
+        console.log("!bk");
     }
+
     if (msg.body === "!geoxor") {
         const video = await youtube.getAnimeWaifuSongVideo();
-    
         await client.sendMessage(msg.from, video.thumbnail, {caption: `*${video.title}*\n_${video.publishDate}_\n\n${video.videoUrl}`});
-        console.log("!geoxor")
+        console.log("!geoxor");
     }
+
     if (msg.body === "!voicereveal") {
         audio.voicereveal(msg);
-        console.log("!voicereveal")
+        console.log("!voicereveal");
     }
+
     if (msg.body === "!time") {
         const time = new Date().toLocaleTimeString();
         client.sendMessage(msg.from, time);
-        console.log("!time")
+        console.log("!time");
     }
+
     if (msg.type === "sticker" && hasStickersEnabled[msg.from]) {
         stickers.sticker(msg);
-        console.log("me react to sticker wudahel 💀")
+        console.log("me react to sticker wudahel 💀");
     }
+
     if (msg.body === "!stickers") {
         if (typeof hasStickersEnabled[msg.from] !== "boolean") {
             hasStickersEnabled[msg.from] = false;
@@ -134,12 +189,13 @@ client.on("message", async msg => {
 
         if (hasStickersEnabled[msg.from]) {
             client.sendMessage(msg.from, "Enabled stickers");
-            console.log("Enabled stickers")
+            console.log("Enabled stickers");
         } else {
             client.sendMessage(msg.from, "Disabled stickers");
-            console.log("Disabled stickers")
+            console.log("Disabled stickers");
         }
     }
+
     if (msg.body.startsWith("!8ball")) {
         const msgBody = msg.body.slice(7);
         const replyText = `You asked: ${msgBody}\n`;
@@ -148,8 +204,9 @@ client.on("message", async msg => {
         const boobis = `My answer: `;
         const göhö = replyText + boobis + randomLine;
         msg.reply(göhö);
-        console.log("!8ball")
+        console.log("!8ball");
     }
+
     if (msg.body.startsWith("!coinflip")) {
         const msgBody = msg.body.slice(9);
         const replyText = `You asked: ${msgBody}\n`;
@@ -158,8 +215,19 @@ client.on("message", async msg => {
         const boobis = `My answer: `;
         const göhö = replyText + boobis + randomLine;
         msg.reply(göhö);
-        console.log("!coinflip")
+        console.log("!coinflip");
     }
-})
+
+    if (msg.body === "!restart" && msg.author === "491795142654@c.us") {
+        client.sendMessage(msg.from, "Restarting...");
+        
+        // Temporäre Datei erstellen, um den Neustart zu kennzeichnen
+        fs.writeFileSync(RESTART_FILE_PATH, "Bot is restarting");
+
+        setTimeout(() => {
+            process.exit(0);
+        }, 500);
+    }
+});
 
 client.initialize();
