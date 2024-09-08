@@ -46,11 +46,6 @@ client.on('ready', () => {
         console.log(message);
         client.sendMessage("120363237311723757@g.us", message);
     }
-
-    runAtMidnight(() => {
-        text.wordofdadae({from: "120363237311723757@g.us"}, client);
-        console.log("wordofdadae sent");
-    });
 });
 
 client.on('qr', qr => {
@@ -59,22 +54,20 @@ client.on('qr', qr => {
 
 let hasStickersEnabled = {};
 
-function runAtMidnight(callback) {
-    const now = new Date();
-    const nextMidnight = new Date(
-        now.getFullYear(),
-        now.getMonth(),
-        now.getDate() + 1,
-        0, 0, 0, 0
-    );
+function getDailyItem(items) {
+    const today = new Date().toISOString().split('T')[0];
 
-    const timeUntilMidnight = nextMidnight - now;
+    let hash = 0;
+    for (let i = 0; i < today.length; i++) {
+        hash = today.charCodeAt(i) + ((hash << 5) - hash);
+    }
 
-    setTimeout(() => {
-        callback();
-        runAtMidnight(callback);
-    }, timeUntilMidnight);
+    const index = Math.abs(hash) % items.length;
+
+    return items[index];
 }
+
+
 
 client.on("message", async msg => {
     console.log(msg.from, msg.type, "sent", msg.body);
@@ -220,13 +213,18 @@ client.on("message", async msg => {
 
     if (msg.body === "!restart" && msg.author === "491795142654@c.us") {
         client.sendMessage(msg.from, "Restarting...");
-        
-        // Temporäre Datei erstellen, um den Neustart zu kennzeichnen
+
         fs.writeFileSync(RESTART_FILE_PATH, "Bot is restarting");
 
         setTimeout(() => {
             process.exit(0);
         }, 500);
+    }
+
+    if (msg.body === "!wordofdadae" || msg.body === "!wodd") {
+        const words = ["(", ")", "/", "\\", ":3", "Angry Bird", "Boobis", "Caseoh", "Cock", "Cocksucker", "Danger", "Epic Games", "Fortnite", "Gae", "Gay", "Gæ", "Gehauseoh", "Giganigga", "Jæn_Gaming", "Kip", "Kup", "Momé", "Muchmamim", "Nichibiden", "Nichijou", "OwO", "Rovio", "Silly", "Squewe", "Spotify", "Top 5", "UwU", "YouTube", "YouTube Music"];
+        msg.reply(getDailyItem(words));
+        console.log("Sent daily Word :" + getDailyItem(words));    
     }
 });
 
