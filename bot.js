@@ -91,6 +91,11 @@ client.on("message", async msg => {
     if (msg.body === "!linus") {
         stickers.sendSticker(msg, "linus");
         client.sendMessage(msg.from, "Caught in 4K Lil bro");
+        if (Math.random() < 0.05) {
+            const media = await MessageMedia.fromFilePath(path.join(__dirname, "assets", "videos", "LinusEasterEgg.mp4"));
+            client.sendMessage(msg.from, media, {caption: "Enjoy this Easter Egg 🗿"});
+            console.log("!linus easter egg");
+        }
         console.log("!linus");
     }
 
@@ -222,7 +227,7 @@ client.on("message", async msg => {
     }
 
     if (msg.body === "!wordofdadae" || msg.body === "!wodd") {
-        const words = ["(", ")", "/", "\\", ":3", "Angry Bird", "Boobis", "Caseoh", "Cock", "Cocksucker", "Danger", "Epic Games", "Fortnite", "Gae", "Gay", "Gæ", "Gehauseoh", "Giganigga", "Jæn_Gaming", "Kip", "Kup", "Momé", "Muchmamim", "Nichibiden", "Nichijou", "OwO", "Rovio", "Silly", "Squewe", "Spotify", "Top 5", "UwU", "YouTube", "YouTube Music"];
+        const words = ["(", ")", "/", "\\", ":3", "Angry Bird", "Boobis", "Caseoh", "Cock", "Cocksucker", "Danger", "Epic Games", "Fortnite", "Gae", "Gay", "Gæ", "Gehäuseoh", "Giganigga", "Jæn_Gaming", "Kip", "Kup", "Momé", "Muchmamim", "Nichibiden", "Nichijou", "OwO", "Rovio", "Silly", "Squewe", "Spotify", "Top 5", "UwU", "YouTube", "YouTube Music"];
         msg.reply(getDailyItem(words));
         console.log("Sent daily Word :" + getDailyItem(words));    
     }
