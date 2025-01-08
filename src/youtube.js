@@ -69,7 +69,7 @@ class YouTube {
     async getJaenVideo() {
         const response = await youtube.channels.list({
             part: 'contentDetails',
-            forHandle: "@Jaen_Gaming69420"
+            forHandle: "@Jaen_Gamingamus"
         })
 
         const uploadPlaylistId = response.data.items[0].contentDetails.relatedPlaylists.uploads;
