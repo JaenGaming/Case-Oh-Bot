@@ -32,4 +32,11 @@ Ich kann Ihnen mit den folgenden Befehlen helfen:
 - !ferriswheel – macht den Bot wütend
 - !linus - Linus Sex-Tipps
 
-    _CaseOh Bot Version 0.0.7_
+    *- Admin Befehle*
+
+- !restart - Neustarten des Bots
+- !adminlist - Zeigt die Admins an
+- !addadmin @user - Fügt einen Admin hinzu
+- !removeadmin @user - Entfernt einen Admin
+
+    _CaseOh Bot Version 0.0.8_

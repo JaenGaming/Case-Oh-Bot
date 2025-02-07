@@ -1,0 +1,11 @@
+{
+    "restartable": "rs",
+    "ignore": ["*.test.js", "*.spec.js"],
+    "env": {
+      "SHUTDOWN": "false"
+    },
+    "events": {
+      "crash": "if [ \"$SHUTDOWN\" = \"true\" ]; then exit 0; else exit 1; fi"
+    }
+  }
+  

@@ -32,4 +32,11 @@ I can help you with the following commands:
 - !ferriswheel – makes the bot angry
 - !linus - Linus sex tips
 
-    _CaseOh Bot Version 0.0.7_
+    *- Admin commands*
+
+- !restart - restart the bot
+- !adminlist - Shows the admins
+- !addadmin @user - Adds an admin
+- !removeadmin @user - Removes an admin
+
+    _CaseOh Bot Version 0.0.8_

@@ -7,8 +7,10 @@ const qrcode = require('qrcode-terminal');
 const path = require('path');
 const fs = require('fs');
 const cron = require('node-cron');
+const crypto = require('crypto');
+const mongoose = require('mongoose');
 
-const RESTART_FILE_PATH = path.join(__dirname, 'restart.tmp'); // Pfad zur temporären Datei
+const RESTART_FILE_PATH = path.join(__dirname, 'restart.tmp');
 
 if (!process.env.CHROME_PATH || !process.env.YOUTUBE_API_KEY) {
     throw new Error("CaseOh Bot requires a valid .env file with at least CHROME_PATH and YOUTUBE_API_KEY specified.\nCheck the README for more details.");
@@ -22,6 +24,11 @@ const client = new Client({
         args: process.env.DISABLE_SANDBOX === "true" ? ["--no-sandbox"] : undefined
     }
 });
+
+const admins = require('./data/admins.json').admins;
+const isAdmin = (senderId) => {
+    return admins.includes(senderId.replace(/:[0-9]+/g, ""));
+};
 
 // cmds
 const text = new (require("./src/text"))(client);
@@ -71,6 +78,9 @@ function getDailyItem(items) {
 
 client.on("message", async msg => {
     console.log(msg.from, msg.type, "sent", msg.body);
+    const sender = msg.author || msg.from;
+    const cleanSender = sender.replace(/:[0-9]+/g, "");
+    const mentionedUsers = await msg.getMentions();
 
     if (msg.body === "!ping") {
         text.ping(msg, client);
@@ -180,6 +190,10 @@ client.on("message", async msg => {
     }
 
     if (msg.body === "!stickers") {
+        if (!isAdmin(cleanSender)) {
+            msg.reply("❌ Du hast keine Adminrechte!");
+            return;
+        }
         if (typeof hasStickersEnabled[msg.from] !== "boolean") {
             hasStickersEnabled[msg.from] = false;
         }
@@ -216,20 +230,82 @@ client.on("message", async msg => {
         console.log("!coinflip");
     }
 
-    if (msg.body === "!restart" && msg.author === "491795142654@c.us") {
-        client.sendMessage(msg.from, "Restarting...");
-
-        fs.writeFileSync(RESTART_FILE_PATH, "Bot is restarting");
-
-        setTimeout(() => {
+    if (msg.body === '!restart') {
+        if (!isAdmin(cleanSender)) {
+            msg.reply("❌ Du hast keine Adminrechte!");
+            return;
+        }
+        else
+        msg.reply("Restarting...").then(() => {
             process.exit(0);
-        }, 500);
+       });
     }
 
-    if (msg.body === "!wordofdadae" || msg.body === "!wodd") {
-        const words = ["(", ")", "/", "\\", ":3", "Angry Bird", "Boobis", "Caseoh", "Cock", "Cocksucker", "Danger", "Epic Games", "Fortnite", "Gae", "Gay", "Gæ", "Gehäuseoh", "Giganigga", "Jæn_Gaming", "Kip", "Kup", "Momé", "Muchmamim", "Nichibiden", "Nichijou", "OwO", "Rovio", "Silly", "Squewe", "Spotify", "Top 5", "UwU", "YouTube", "YouTube Music"];
-        msg.reply(getDailyItem(words));
-        console.log("Sent daily Word :" + getDailyItem(words));    
+    if (msg.body.startsWith('!addadmin')) {
+        if (!isAdmin(cleanSender)) {
+            msg.reply("❌ Du hast keine Adminrechte!");
+            return;
+        }
+
+        if (mentionedUsers.length > 0) {
+            mentionedUsers.forEach(user => {
+                const userId = user.id._serialized;
+                if (!admins.includes(userId)) {
+                    admins.push(userId);
+                    fs.writeFileSync('./data/admins.json', JSON.stringify({ admins }, null, 2));
+                    msg.reply(`✅ ${userId} wurde als Admin hinzugefügt.`);
+                } else {
+                    msg.reply(`⚠️ ${userId} ist bereits Admin.`);
+                }
+            });
+        } else {
+            msg.reply("⚠️ Bitte erwähne jemanden mit @, um ihn als Admin hinzuzufügen.");
+        }
+
+    }
+
+    // Entferne Admin, wenn @ erwähnt wurde
+    else if (msg.body.startsWith('!removeadmin')) {
+        if (!isAdmin(cleanSender)) {
+            msg.reply("❌ Du hast keine Adminrechte!");
+            return;
+        }
+
+        if (mentionedUsers.length > 0) {
+            mentionedUsers.forEach(user => {
+                const userId = user.id._serialized;
+                if (admins.includes(userId)) {
+                    const index = admins.indexOf(userId);
+                    admins.splice(index, 1);
+                    fs.writeFileSync('./data/admins.json', JSON.stringify({ admins }, null, 2));
+                    msg.reply(`❌ ${userId} wurde aus den Admins entfernt.`);
+                } else {
+                    msg.reply(`⚠️ ${userId} ist kein Admin.`);
+                }
+            });
+        } else {
+            msg.reply("⚠️ Bitte erwähne jemanden mit @, um ihn als Admin zu entfernen.");
+        }
+
+    }
+
+    else if (msg.body.startsWith('!adminlist')) {
+        if (!isAdmin(cleanSender)) {
+            msg.reply("❌ Du hast keine Adminrechte!");
+            return;
+        }
+
+        msg.reply(`👑 Admins:\n${admins.join('\n')}`);
+    }
+    if (msg.body === "!jaengaming.com") {
+        fetch('https://jaengaming.com')
+            .then(response => {
+                if (response.ok) {
+                    msg.reply("👍 Jaengaming.com is online.");
+                } else {
+                    msg.reply("❌ Jaengaming.com is offline.");
+                }
+            })
     }
 });
 
