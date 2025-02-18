@@ -265,7 +265,21 @@ client.on("message", async msg => {
     }
 
     if (msg.body === "!wordofdadae" || msg.body === "!wodd") {
-        const words = ["(", ")", "/", "\\", ":3", "Angry Bird", "Boobis", "Caseoh", "Cock", "Cocksucker", "Danger", "Epic Games", "Fortnite", "Gae", "Gay", "Gæ", "Gehäuseoh", "Giganigga", "Jæn_Gaming", "Kip", "Kup", "Momé", "Muchmamim", "Nichibiden", "Nichijou", "OwO", "Rovio", "Silly", "Squewe", "Spotify", "Top 5", "UwU", "YouTube", "YouTube Music"];
+        const words = [
+            "(", ")", "/", "\\", ":3", "Angry Bird", "Asshole", "Babil", "Basil", "Bastard", "Bitch",
+            "Bobloc", "Boobis", "Boga", "Bozo", "Burger", "Burgers on my mind", "Caseoh", "Clown",
+            "Cock", "Cocksucker", "Cringe Lord", "Danger", "Dickhead", "Dipshit", "Douchebag",
+            "Dumbass", "Dumbfuck", "Epic Games", "Estupido faq", "Furry", "Fuckface", "Fortnite",
+            "Gae", "Gay", "Gæ", "Gehäuseoh", "Giganigga", "Goofball", "Happy thoughts", "Hastune Miku",
+            "Idiotic", "Idiot", "Jackass", "Jæn_Gaming", "José🔥", "Kasane Teto", "Kel", "Kip", "kopierer",
+            "Kup", "L + Ratio", "Leck meina fußa", "Ligma", "Mari", "Momé", "Monika", "Moron", "Muchmamim",
+            "Natsuki", "Nichibiden", "Nichijou", "Nitwit", "Noob", "Noga", "Noga Boga", "NPC", "Numpty",
+            "OwO", "Peabrain", "Penner", "Pisser", "Pisshead", "Prick", "Rope", "Rovio", "Say Gex",
+            "Sayori", "Shithead", "Silly", "Skill issue", "Skipping rope", "Snuuy", "Something", "Spotify",
+            "Sunny", "The fog is coming", "The fog is cumming", "The greatest technician that ever lived",
+            "Top 5", "Trashcan", "Tree", "Tryhard", "Twat", "Twit", "UwU", "Wanker", "YouTube",
+            "YouTube Music", "Yuri"
+        ];
         msg.reply(getDailyItem(words));
         console.log("Sent daily Word :" + getDailyItem(words));    
     }
