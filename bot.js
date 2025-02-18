@@ -264,7 +264,11 @@ client.on("message", async msg => {
 
     }
 
-    // Entferne Admin, wenn @ erwähnt wurde
+    if (msg.body === "!wordofdadae" || msg.body === "!wodd") {
+        const words = ["(", ")", "/", "\\", ":3", "Angry Bird", "Boobis", "Caseoh", "Cock", "Cocksucker", "Danger", "Epic Games", "Fortnite", "Gae", "Gay", "Gæ", "Gehäuseoh", "Giganigga", "Jæn_Gaming", "Kip", "Kup", "Momé", "Muchmamim", "Nichibiden", "Nichijou", "OwO", "Rovio", "Silly", "Squewe", "Spotify", "Top 5", "UwU", "YouTube", "YouTube Music"];
+        msg.reply(getDailyItem(words));
+        console.log("Sent daily Word :" + getDailyItem(words));    
+    }
     else if (msg.body.startsWith('!removeadmin')) {
         if (!isAdmin(cleanSender)) {
             msg.reply("❌ Du hast keine Adminrechte!");
