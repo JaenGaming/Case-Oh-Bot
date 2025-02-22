@@ -27,7 +27,7 @@ Ich kann Ihnen mit den folgenden Befehlen helfen:
 - !coinflip... - Wirf eine Münze
 - !wodd - Sendet das Wort des Tages
     
-    *- Lustige Sachen*
+    *- Funnies*
 
 - !ferriswheel – macht den Bot wütend
 - !linus - Linus Sex-Tipps

@@ -92,18 +92,12 @@ client.on("message", async msg => {
         console.log("!ferriswheel");
     }
 
-    if (msg.body === "!msgmediatest") {
-        const media = await MessageMedia.fromFilePath(path.join(__dirname, "assets", "videos", "momus_lore.mp4"));
-        client.sendMessage(msg.from, media, {caption: "momus lore"});
-        console.log("!msgmediatest");
-    }
-
     if (msg.body === "!linus") {
         stickers.sendSticker(msg, "linus");
-        client.sendMessage(msg.from, "Caught in 4K Lil bro");
+        client.sendMessage(msg.from, "Linus no sex tip sorry");
         if (Math.random() < 0.05) {
             const media = await MessageMedia.fromFilePath(path.join(__dirname, "assets", "videos", "LinusEasterEgg.mp4"));
-            client.sendMessage(msg.from, media, {caption: "Enjoy this Easter Egg 🗿"});
+            client.sendMessage(msg.from, media, {caption: "🗿"});
             console.log("!linus easter egg");
         }
         console.log("!linus");
@@ -266,8 +260,8 @@ client.on("message", async msg => {
 
     if (msg.body === "!wordofdadae" || msg.body === "!wodd") {
         const words = [
-            "(", ")", "/", "\\", ":3", "Angry Bird", "Asshole", "Babil", "Basil", "Bastard", "Bitch",
-            "Bobloc", "Boobis", "Boga", "Bozo", "Burger", "Burgers on my mind", "Caseoh", "Clown",
+            "(", ")", "/", "\\", ":3", "Angry Bird", "Asshole", "Babil", "Basil", "Bastard", "Ben", "Bitch",
+            "Bobloc", "Boobis", "Boga", "Bozo", "Burger", "Burgers on my mind", "Caseoh",
             "Cock", "Cocksucker", "Cringe Lord", "Danger", "Dickhead", "Dipshit", "Douchebag",
             "Dumbass", "Dumbfuck", "Epic Games", "Estupido faq", "Furry", "Fuckface", "Fortnite",
             "Gae", "Gay", "Gæ", "Gehäuseoh", "Giganigga", "Goofball", "Happy thoughts", "Hastune Miku",

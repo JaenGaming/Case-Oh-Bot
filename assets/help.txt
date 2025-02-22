@@ -27,7 +27,7 @@ I can help you with the following commands:
 - !coinflip... - Flip a coin
 - !wodd - Sends the word of the day
     
-    *-Funny things*
+    *-Funnies*
 
 - !ferriswheel – makes the bot angry
 - !linus - Linus sex tips
