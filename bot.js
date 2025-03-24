@@ -260,18 +260,18 @@ client.on("message", async msg => {
 
     if (msg.body === "!wordofdadae" || msg.body === "!wodd") {
         const words = [
-            "(", ")", "/", "\\", ":3", "Angry Bird", "Asshole", "Babil", "Basil", "Bastard", "Ben", "Bitch",
-            "Bobloc", "Boobis", "Boga", "Bozo", "Burger", "Burgers on my mind", "Caseoh",
-            "Cock", "Cocksucker", "Cringe Lord", "Danger", "Dickhead", "Dipshit", "Douchebag",
-            "Dumbass", "Dumbfuck", "Epic Games", "Estupido faq", "Furry", "Fuckface", "Fortnite",
-            "Gae", "Gay", "Gæ", "Gehäuseoh", "Giganigga", "Goofball", "Happy thoughts", "Hastune Miku",
-            "Idiotic", "Idiot", "Jackass", "Jæn_Gaming", "José🔥", "Kasane Teto", "Kel", "Kip", "kopierer",
-            "Kup", "L + Ratio", "Leck meina fußa", "Ligma", "Mari", "Momé", "Monika", "Moron", "Muchmamim",
-            "Natsuki", "Nichibiden", "Nichijou", "Nitwit", "Noob", "Noga", "Noga Boga", "NPC", "Numpty",
-            "OwO", "Peabrain", "Penner", "Pisser", "Pisshead", "Prick", "Rope", "Rovio", "Say Gex",
-            "Sayori", "Shithead", "Silly", "Skill issue", "Skipping rope", "Snuuy", "Something", "Spotify",
+            "(", ")", "/", "\\", ":3", "Aligator babyyy", "Angry Bird", "Babil", "Basil", "Ben", "Bitch", "Betch",
+            "Bobloc", "Boobis", "Boga","Boges", "Boges Noges", "Burger", "Burgers on my mind", "Caseoh",
+            "Cock", "Cocksucker", "Cring", "Danger", "Dick",
+            "Dumbass", "Epic Games", "Estupido faq", "Furry",  "Fortnite",
+            "Gae", "Gay", "Gæ", "Gehäuseoh", "Giganigga", "Goofy ahh", "Goofy ahh tiere", "Happy thoughts", "Hastune Miku", 
+            "Idiot", "Jæn_Gaming", "José🔥", "Kasane Teto", "Kel", "Kip", "kopierer",
+            "Kup", "Leck meina fußa", "Ligma Bälle", "Mari", "Momé", "Monika", "Muchmamim",
+            "Natsuki", "Nichibiden", "Nichijou", "Noga", "Noga Boga", "Noges", "NPC", "Nr6... COCK", "Numpty",
+            "OwO", "Alter Penner", "Rope", "Rovio", "Say Gex",
+            "Sayori", "Silly", "Skill issue", "Skipping rope", "Snuuy", "Something", "Spotify",
             "Sunny", "The fog is coming", "The fog is cumming", "The greatest technician that ever lived",
-            "Top 5", "Trashcan", "Tree", "Tryhard", "Twat", "Twit", "UwU", "Wanker", "YouTube",
+            "Top 5", "Tree", "Twitter", "UwU", "X", "XHamster", "YouTube",
             "YouTube Music", "Yuri"
         ];
         msg.reply(getDailyItem(words));
