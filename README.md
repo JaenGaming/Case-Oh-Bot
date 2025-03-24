@@ -3,13 +3,10 @@
 </div>
 
 <div id="header" align="center">
-  <img src="https://yt3.googleusercontent.com/yMgikI6obExifai9mch7ut8T68u97svQa8AWNimkxDLLy35mTRIgwOTWqS7oL41DikmqYbte=s160-c-k-c0x00ffffff-no-rj" width="100"/>
+  <img src="https://github.com/JaenGaming/jaengaming.com/blob/main/data/files/Logo.png" width="100"/>
 </div>
 <div id="badges" align="center">
-  <a href="https://twitch.tv/jaen_gaming">
-    <img src="https://img.shields.io/badge/Twitch-purple?style=for-the-badge&logo=twitch&logoColor=white" alt="LinkedIn Badge"/>
-  </a>
-  <a href="https://www.youtube.com/@Jaen_Gaming69420?sub-confirmation=1">
+  <a href="https://www.youtube.com/@Jaen_Gamingamus?sub-confirmation=1">
     <img src="https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge"/>
   </a>
   <a href="https://x.com/jans_1910">
