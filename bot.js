@@ -9,6 +9,7 @@ const fs = require('fs');
 const cron = require('node-cron');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
+const schedule = require('node-schedule');
 
 const RESTART_FILE_PATH = path.join(__dirname, 'restart.tmp');
 
@@ -36,7 +37,7 @@ const stickers = new (require("./src/sticker"))(client);
 const youtube = require("./src/youtube");
 const audio = new (require("./src/audio"))(client);
 
-// client.on('ready', () => {
+client.on('ready', () => {
 //     let wasRestarted = false;
 // 
 //     if (fs.existsSync(RESTART_FILE_PATH)) {
@@ -53,7 +54,21 @@ const audio = new (require("./src/audio"))(client);
 //         console.log(message);
 //         client.sendMessage("120363237311723757@g.us", message);
 //     }
-// });
+    // Datum: 8. Juni 2025 um 12:00 Uhr
+    const sendezeit = new Date(2025, 5, 8, 12, 0, 0);
+
+    schedule.scheduleJob(sendezeit, async () => {
+        const chatId = '4920837692367@c.us';
+        const nachricht = 'Yo bro look at dis jaengaming.com/timer Wudahel';
+
+        try {
+            await client.sendMessage(chatId, nachricht);
+            console.log('Sent mas importante mensaje!');
+        } catch (error) {
+            
+        }
+    });
+});
 
 client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
@@ -319,20 +334,6 @@ client.on("message", async msg => {
                 }
             })
     }
-      // Datum: 8. Juni 2025 um 12:00 Uhr
-    const sendezeit = new Date(2025, 5, 8, 12, 0, 0);
-
-    schedule.scheduleJob(sendezeit, async () => {
-        const chatId = '4920837692367@c.us';
-        const nachricht = 'Yo bro look at dis jaengaming.com/timer Wudahel';
-
-        try {
-            await client.sendMessage(chatId, nachricht);
-            console.log('Sent mas importante mensaje!');
-        } catch (error) {
-            
-        }
-  });
 });
 
 client.initialize();
